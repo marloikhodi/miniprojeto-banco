@@ -14,39 +14,45 @@ function horarioAtual() {
 
 function bankSystem() {
 
-    var saldoInicial = Number(0)
+    let estado = {
+        saldo: 10
+    }
 
     function verificarSaldo() {
-        const mensagem = `${horarioAtual()}, o seu saldo atual é de R$${saldoInicial}.`
-        return console.log(mensagem)
+        return `O saldo atual é de R$${estado.saldo}.`
     }
 
     function depositarSaldo() {
         const saldoDepositado = Number(prompt("Digite o saldo a ser depositado: R$"))
-        saldoInicial += saldoDepositado
-        const mensagem = `
-            Seu deposito de R$${saldoDepositado} foi feito com sucesso!
-            Novo saldo = R$${saldoInicial}.
+
+        if (isNaN(saldoDepositado) || saldoDepositado <= 0) {
+            return "Erro: Digite um valor valido para o deposito."
+        }
+
+        estado.saldo += saldoDepositado
+        return `
+            Seu deposito de R$${saldoDepositado.toFixed(2)} foi feito com sucesso!
+            Novo saldo = R$${estado.saldo.toFixed(2)}.
             `
-        return console.log(mensagem)
     }
 
     function transferirSaldo() {
         const saldoTransferido = Number(prompt("Digite o saldo a ser transferido: R$"))
-        if (saldoTransferido > saldoInicial) {
-            return console.log(`Erro na operação, o valor de R$${saldoTransferido} é menor que o saldo em conta.`)
-        }
-        else {
-            saldoInicial -= saldoTransferido
-            const mensagem = `
-            Seu deposito de R$${saldoTransferido} foi feito com sucesso!
-            Novo saldo = R$${saldoInicial}.
-            `
-            return console.log(mensagem)
-        }
-    }
 
-    transferirSaldo()
+        if (isNaN(saldoTransferido) || saldoTransferido <= 0) {
+            return "Erro: Digite um valor valido para a transferência."
+        }
+
+        if (saldoTransferido > estado.saldo) {
+            return `Erro na operação, o valor R$${saldoTransferido.toFixed(2)} é maior que o saldo em conta.`
+        }
+
+        estado.saldo -= saldoTransferido
+        return `
+            Sua transferência de R$${saldoTransferido.toFixed(2)} foi realizada com sucesso!
+            Novo saldo = R$${estado.saldo}.
+            `
+    }
 
     // const novaAcao = Number(prompt("Deseja realizar outra ação?"))
     // novaAcao === 1 ? depositarSaldo() : null
