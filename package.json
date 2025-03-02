@@ -1,0 +1,24 @@
+{
+  "name": "miniprojeto-banco",
+  "version": "1.0.0",
+  "description": "/meu-projeto/\r │\r ├── /assets/               # Imagens, fontes e outros recursos estáticos\r │   ├── /images/           # Imagens do projeto\r │   ├── /fonts/            # Fontes customizadas\r │   └── /icons/            # Ícones usados na aplicação\r │\r ├── /css/                  # Arquivos de estilo CSS\r │   ├── /base/             # Estilos globais (reset, tipografia, variáveis)\r │   ├── /components/       # Estilos de componentes reutilizáveis\r │   ├── /layout/           # Estilos relacionados ao layout (grid, header, footer)\r │   ├── /pages/            # Estilos específicos de páginas\r │   ├── /themes/           # Temas de cor ou estilos específicos\r │   └── style.css          # Arquivo principal de CSS que importa todos os outros\r │\r ├── /js/                    # Arquivos JavaScript\r │   ├── /libs/              # Bibliotecas externas (por exemplo, jQuery, etc.)\r │   ├── /modules/           # Módulos de funcionalidades\r │   ├── /services/          # Funções de serviços (exemplo: requisições API)\r │   ├── /utils/             # Funções auxiliares ou utilitárias\r │   └── main.js             # Arquivo principal que importa todos os módulos\r │\r ├── /index.html             # Arquivo principal HTML\r ├── /about.html             # Página adicional (se necessário)\r ├── /contact.html           # Página adicional (se necessário)\r ├── /404.html               # Página de erro (caso necessário)\r └── /README.md              # Documentação do projeto (se necessário)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marloikhodi/miniprojeto-banco.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/marloikhodi/miniprojeto-banco/issues"
+  },
+  "homepage": "https://github.com/marloikhodi/miniprojeto-banco#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
